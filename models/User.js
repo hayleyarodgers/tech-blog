@@ -15,6 +15,7 @@ class User extends Model {
 	}
 }
 
+// Create a User table in the blog database
 User.init(
 	// Define the columns in the User table of the database
 	{
