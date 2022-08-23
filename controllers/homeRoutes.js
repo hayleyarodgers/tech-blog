@@ -12,7 +12,7 @@ const withAuth = require('../utils/auth');
 // View homepage showing all blog posts
 router.get('/', async (req, res) => {
 	try {
-		// Get all blog posts
+		// Get all blog posts and join with user data
 		const postData = await Post.findAll({
 			include: [
 				{
@@ -27,7 +27,6 @@ router.get('/', async (req, res) => {
 
 		// Pass serialised data into handlebars template
 		res.render('homepage', { posts });
-		res.status(200).json(posts);
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -44,6 +43,9 @@ router.get('/post/:id', withAuth, async (req, res) => {
 					model: User,
 					attributes: ['username'],
 				},
+				{
+					model: Comment,
+				},
 			],
 		});
 
@@ -52,14 +54,11 @@ router.get('/post/:id', withAuth, async (req, res) => {
 			return;
 		}
 
-		// Unsure how to include comments saved beneath post
-
 		// Serialise postData into a plain object so handlebars template can read it
 		const post = postData.get({ plain: true });
 
 		// Pass serialised data into handlebars template
 		res.render('post', { post, logged_in: true });
-		res.status(200).json(post);
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -87,7 +86,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 		// Pass serialised data into handlebars template
 		res.render('dashboard', { user, logged_in: true });
-		res.status(200).json(user);
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
