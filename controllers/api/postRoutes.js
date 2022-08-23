@@ -1,6 +1,6 @@
 // This file contains all routes related to posts in the blog database
 
-//
+// Import express and create a new router module
 const router = require('express').Router();
 
 // Import Post model
@@ -71,4 +71,5 @@ router.delete('/:id', withAuth, async (req, res) => {
 	}
 });
 
+// Export router module
 module.exports = router;

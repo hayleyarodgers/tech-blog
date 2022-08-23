@@ -1,6 +1,6 @@
 // This file contains all routes related to reading and viewing data from the blog database
 
-//
+// Import express and create a new router module
 const router = require('express').Router();
 
 // Import models
@@ -35,7 +35,6 @@ router.get('/', async (req, res) => {
 });
 
 // View blog post
-// withAuth helper function is run first; if not logged in the user is redirected to log in page
 router.get('/post/:id', withAuth, async (req, res) => {
 	try {
 		// Get blog post based on id
@@ -68,7 +67,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
 });
 
 // View dashboard containing list of blog posts submitted by logged in user
-// withAuth helper function is run first; if not logged in the user is redirected to log in page
 router.get('/dashboard', withAuth, async (req, res) => {
 	try {
 		// Find logged in user based on session ID
@@ -112,4 +110,5 @@ router.get('/signup', (req, res) => {
 	res.render('signup');
 });
 
+// Export router module
 module.exports = router;

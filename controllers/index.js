@@ -1,6 +1,6 @@
 // This file specifies the paths for api vs non-api routes
 
-//
+// Import express and create a new router module
 const router = require('express').Router();
 
 // If route path contains /api, go to api folder

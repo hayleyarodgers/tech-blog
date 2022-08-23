@@ -1,6 +1,6 @@
 // This file contains all routes related to users in the blog database
 
-//
+// Import express and create a new router module
 const router = require('express').Router();
 
 // Import User model
@@ -76,4 +76,5 @@ router.post('/logout', (req, res) => {
 	}
 });
 
+// Export router module
 module.exports = router;

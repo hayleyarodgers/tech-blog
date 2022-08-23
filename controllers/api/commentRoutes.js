@@ -1,6 +1,6 @@
 // This file contains all routes related to comments in the blog database
 
-//
+// Import express and create a new router module
 const router = require('express').Router();
 
 // Import Comment model
@@ -27,4 +27,5 @@ router.post('/', withAuth, async (req, res) => {
 	}
 });
 
+// Export router module
 module.exports = router;
