@@ -60,6 +60,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const routes = require('./controllers');
 app.use(routes);
 
+// Create port
 const PORT = process.env.PORT || 3001;
 
 // Connect to the database and then start the Express.js server
