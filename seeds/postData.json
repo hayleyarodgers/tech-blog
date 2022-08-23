@@ -1,0 +1,20 @@
+[
+    {
+        "title": "MVC",
+        "content": "MVC allows developers to uphold the separation of concerns principle by separating their code into three sections: the Model layer for data, the View layer for display and the Controller layer for routing commands between the Model and View.",
+        "date_created": "23/7/2022",
+        "user_id": 1
+    },
+    {
+        "title": "Authentication vs Authorisation",
+        "content": "\"Authentication\" means confirming your own identity. On the other hand, \"authorisation\" means being allowed access to a system.",
+        "date_created": "1/8/2022",
+        "user_id": 2
+    },
+    {
+        "title": "ORM",
+        "content": "Object-relational mapping using Sequelize has transformed the way developers create SQL database queries.",
+        "date_created": "17/8/2022",
+        "user_id": 3
+    }
+]
