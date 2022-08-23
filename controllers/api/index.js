@@ -1,3 +1,5 @@
+// This file specifies the paths for all api routes
+
 const router = require('express').Router();
 
 const userRoutes = require('./userRoutes');

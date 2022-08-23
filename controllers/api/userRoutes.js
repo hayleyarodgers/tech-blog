@@ -1,5 +1,9 @@
+// This file contains all routes related to users in the blog database
+
+//
 const router = require('express').Router();
 
+// Import User model
 const { User } = require('../../models');
 
 // Sign up to create new user account
