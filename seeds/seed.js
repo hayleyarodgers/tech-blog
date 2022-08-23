@@ -16,31 +16,14 @@ const seedDatabase = async () => {
 	// Creates the connection, dropping it first if it already existed
 	await sequelize.sync({ force: true });
 
-	//
-	const users = await User.bulkCreate(userSeedData, {
-		//
+	await User.bulkCreate(userSeedData, {
 		individualHooks: true,
-		//
 		returning: true,
 	});
 
-	//
-	for (const post of postSeedData) {
-		//
-		await Post.create({
-			//
-			...post,
-		});
-	}
+	await Post.bulkCreate(postSeedData);
 
-	//
-	for (const comment of commentSeedData) {
-		//
-		await Comment.create({
-			//
-			...comment,
-		});
-	}
+	await Comment.bulkCreate(commentSeedData);
 
 	process.exit(0);
 };
