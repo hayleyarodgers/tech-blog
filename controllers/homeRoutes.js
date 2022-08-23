@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
 
 		// Pass serialised data into handlebars template
 		res.render('homepage', { posts });
+		res.status(200).json(posts);
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -47,11 +48,17 @@ router.get('/post/:id', withAuth, async (req, res) => {
 			],
 		});
 
+		if (!postData) {
+			res.status(404).json({ message: 'No post found with that id.' });
+			return;
+		}
+
 		// Serialise postData into a plain object so handlebars template can read it
 		const post = postData.get({ plain: true });
 
 		// Pass serialised data into handlebars template
 		res.render('post', { post, logged_in: true });
+		res.status(200).json(post);
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -70,6 +77,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 			include: [
 				{
 					model: Post,
+					attributes: ['title', 'date_created'],
 				},
 			],
 		});
@@ -79,6 +87,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 		// Pass serialised data into handlebars template
 		res.render('dashboard', { user, logged_in: true });
+		res.status(200).json(user);
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
