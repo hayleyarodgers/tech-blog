@@ -1,6 +1,6 @@
 // When run, this file seeds the database with sample data
 
-// Create a Sequelize instance to connect to the database
+// Import the database connection object
 const sequelize = require('../config/connection');
 
 // Import models

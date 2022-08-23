@@ -6,7 +6,7 @@ const { Model, DataTypes } = require('sequelize');
 // Import bcrypt for hashing a user's password to keep it safe
 const bcrypt = require('bcrypt');
 
-// Create a Sequelize instance to connect to the database
+// Import the database connection object
 const sequelize = require('../config/connection');
 
 // Create a new Sequelize model for users
