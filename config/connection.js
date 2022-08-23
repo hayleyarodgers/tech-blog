@@ -1,3 +1,5 @@
+// When imported, this file allows another file to create a connection with the blog database
+
 // Import Sequelize for working with mySQL database more easily
 const Sequelize = require('sequelize');
 
