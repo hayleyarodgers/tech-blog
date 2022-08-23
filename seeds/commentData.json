@@ -1,0 +1,20 @@
+[
+    {
+        "comment": "I'd strongly recommend using handlebars.js as the template engine for your View layer—it's great",
+        "date_created": "24/7/2022",
+        "user_id": 2,
+        "post_id": 1
+    },
+    {
+        "comment": "Thanks for the recommendation lernantino!",
+        "date_created": "26/7/2022",
+        "user_id": 1,
+        "post_id": 1
+    },
+    {
+        "comment": "I just learned about Sequelize and completely agree... it's lifechanging",
+        "date_created": "19/8/2022",
+        "user_id": 1,
+        "post_id": 3
+    }
+]
