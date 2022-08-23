@@ -1,6 +1,6 @@
 // When run, this file seeds the database with sample data
 
-// Create database connection
+// Create a Sequelize instance to connect to the database
 const sequelize = require('../config/connection');
 
 // Import models
@@ -13,7 +13,7 @@ const commentSeedData = require('./commentData.json');
 
 // Seed database
 const seedDatabase = async () => {
-	//
+	// Creates the connection, dropping it first if it already existed
 	await sequelize.sync({ force: true });
 
 	//

@@ -3,7 +3,7 @@
 // Destructure Model and DataTypes from Sequelize database to make them available for use in our table creation
 const { Model, DataTypes } = require('sequelize');
 
-// Create database connection
+// Create a Sequelize instance to connect to the database
 const sequelize = require('../config/connection');
 
 // Create a new Sequelize model for comments on blog posts
