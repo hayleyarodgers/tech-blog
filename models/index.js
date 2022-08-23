@@ -31,7 +31,7 @@ Comment.belongsTo(User, {
 	foreignKey: 'user_id',
 });
 
-/* Relationship between posts and comments */
+/* Relationship between comments and posts */
 
 // A post can have many comments
 Post.hasMany(Comment, {
@@ -42,6 +42,19 @@ Post.hasMany(Comment, {
 // A comment belongs to a single post
 Comment.belongsTo(Post, {
 	foreignKey: 'post_id',
+});
+
+/* Relationship between comments and users */
+
+// A user can have many comments
+User.hasMany(Comment, {
+	foreignKey: 'user_id',
+	onDelete: 'CASCADE',
+});
+
+// A comment belongs to a single user
+Comment.belongsTo(User, {
+	foreignKey: 'user_id',
 });
 
 module.exports = { User, Post, Comment };
