@@ -53,6 +53,8 @@ router.get('/post/:id', withAuth, async (req, res) => {
 			return;
 		}
 
+		// Unsure how to include comments saved beneath post
+
 		// Serialise postData into a plain object so handlebars template can read it
 		const post = postData.get({ plain: true });
 
