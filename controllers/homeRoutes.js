@@ -86,6 +86,15 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 // View log in page
+router.get('/login', (req, res) => {
+	// If the user is already logged in, redirect them to their dashboard
+	if (req.session.logged_in) {
+		res.redirect('/dashboard');
+		return;
+	}
+
+	res.render('login');
+});
 
 // View sign in page
 
