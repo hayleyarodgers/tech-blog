@@ -59,6 +59,31 @@ router.get('/post/:id', withAuth, async (req, res) => {
 });
 
 // View dashboard containing list of blog posts submitted by logged in user
+// withAuth helper function is run first; if not logged in the user is redirected to log in page
+router.get('/dashboard', withAuth, async (req, res) => {
+	try {
+		// Find logged in user based on session ID
+		const userData = await User.findByPk(req.session.user_id, {
+			attributes: {
+				exclude: ['password'],
+			},
+			include: [
+				{
+					model: Post,
+				},
+			],
+		});
+
+		// Serialise userData into a plain object so handlebars template can read it
+		const user = userData.get({ plain: true });
+
+		// Pass serialised data into handlebars template
+		res.render('dashboard', { user, logged_in: true });
+	} catch (err) {
+		console.log(err);
+		res.status(500).json(err);
+	}
+});
 
 // View log in page
 
