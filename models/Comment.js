@@ -53,7 +53,7 @@ Comment.init(
 		// Set the name on all attributes to the snake_case version of its name
 		underscored: true,
 		// Set the name used to reference the User table in other places
-		modelName: 'post',
+		modelName: 'comment',
 	}
 );
 
