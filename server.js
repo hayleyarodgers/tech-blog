@@ -31,10 +31,7 @@ app.use(session(sess));
 
 // Import the Handlebars.js package for dynamically creating HTML
 const exphbs = require('express-handlebars');
-
-// Set up Handlebars.js engine with custom helpers
-const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create();
 
 // Inform Express.js which template engine to use
 app.engine('handlebars', hbs.engine);
