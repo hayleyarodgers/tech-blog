@@ -1,0 +1,59 @@
+/* Custom global styling */
+:root {
+    font-size: 62.5%;
+    --font-heading: 'Karla', sans-serif;
+    --font-main: 'Inconsolata', monospace;
+    --blue: #1233FF;
+}
+
+/* Custom font and size styling */
+body {
+    color: white;
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 1.65rem;
+    line-height: 1.7;
+}
+
+h1,
+h2 {
+    font-family: var(--font-heading);
+}
+
+h1 {
+   font-size: 7rem;
+   color: white;
+}
+
+h2 {
+   font-size: 5rem;
+   background-color: white;
+   color: var(--blue);
+   width: fit-content;
+}
+
+header {
+    background-color: var(--blue);
+    /*background-image: url('./background.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;*/
+}
+
+.navbar a {
+    font-size: 2rem; 
+    color: white;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.blockquote-footer {
+    color: white;
+    font-size: 1.6rem
+}
+
+.card-body {
+    background-color: var(--blue);
+}
