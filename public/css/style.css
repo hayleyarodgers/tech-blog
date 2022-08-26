@@ -32,6 +32,13 @@ h2 {
    width: fit-content;
 }
 
+h3, 
+form label {
+    color: var(--blue);
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+}
+
 header {
     background-color: var(--blue);
     /*background-image: url('./background.jpeg');
@@ -45,20 +52,17 @@ header {
     color: white;
 }
 
-p {
-    font-size: 1.65rem;
-}
-
+p,
 .blockquote-footer {
-    color: white;
-    font-size: 1.65rem
+    font-size: 1.65rem;
+    color: rgb(85, 85, 85);
 }
 
 a {
     text-decoration: none;
 }
 
-.card-body {
+.card {
     background-color: var(--blue);
 }
 
@@ -73,12 +77,10 @@ a {
     border: var(--blue);
 }
 
-form label {
-    color: var(--blue);
-    font-family: var(--font-heading);
-    font-size: 1.65rem;
+hr {
+    margin: 25px 0px;
 }
 
-form p {
-    color: grey;
+#existing-comments .card {
+    background-color: rgba(128, 128, 128, 0.105);
 }

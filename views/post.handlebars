@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <!--Post-->
+            <div id="post">
+                <h2>{{post.title}}</h2>
+                <p>{{post.content}}</p>
+                <blockquote class="blockquote mb-0">
+                    <footer class="blockquote-footer"><cite title="Source Title">{{user.username}}</cite>, {{post.date_created}}</footer>
+                </blockquote>
+            </div>
+            <br>
+            <hr>
+            <!--Comments-->
+            <div>
+                <h3>Comments</h3>
+                <br>
+                <div id="existing-comments">
+                    {{#each comments as |comment|}}
+                    <div class="card mb-3 rounded-0 border-0">
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>{{comment.comment}}</p>
+                                <footer class="blockquote-footer"><cite title="Source Title">{{user.username}}</cite>, {{comment.date_created}}</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <br>
+                <div id="new-comment">
+                    <input type="text" class="form-control" id="new-comment" placeholder="Add a comment">
+                    <button type="submit" class="btn btn-primary my-3 px-4">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./js/addComment.js"></script>
