@@ -15,8 +15,6 @@ router.post('/', withAuth, async (req, res) => {
 		// Create new comment based on request information
 		const newComment = await Comment.create({
 			...req.body,
-			// Unsure how to access this yet
-			post_id: x,
 			user_id: req.session.user_id,
 		});
 
