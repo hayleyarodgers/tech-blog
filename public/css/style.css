@@ -70,6 +70,13 @@ a {
     color: white;
 }
 
+#logout-button {
+    font-size: 2rem; 
+    color: white;
+    border: none;
+    background: none;
+}
+
 hr {
     margin: 25px 0px;
 }
@@ -90,7 +97,7 @@ header {
 /* Custom button styling */
 .btn-primary {
     font-family: var(--font-heading);
-    font-size: 1.65rem;
+    font-size: 2rem;
     background-color: var(--blue);
     border: var(--blue);
 }
