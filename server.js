@@ -31,7 +31,12 @@ app.use(session(sess));
 
 // Import the Handlebars.js package for dynamically creating HTML
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create();
+
+// Import the format date helper function
+const helpers = require('./utils/date');
+
+// Pass helper function into Handlebars.js
+const hbs = exphbs.create({ helpers });
 
 // Inform Express.js which template engine to use
 app.engine('handlebars', hbs.engine);
