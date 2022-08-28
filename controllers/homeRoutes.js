@@ -26,7 +26,10 @@ router.get('/', async (req, res) => {
 		const posts = postData.map((post) => post.get({ plain: true }));
 
 		// Pass serialised data into handlebars template
-		res.render('homepage', { posts });
+		res.render('homepage', {
+			posts,
+			logged_in: req.session.logged_in,
+		});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -60,6 +63,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 		// Pass serialised data into handlebars template
 		res.render('post', {
 			...post,
+			logged_in: req.session.logged_in,
 			post_user_id: postData.id,
 			current_user_id: req.session.user_id,
 		});
@@ -89,7 +93,10 @@ router.get('/dashboard', withAuth, async (req, res) => {
 		const user = userData.get({ plain: true });
 
 		// Pass serialised data into handlebars template
-		res.render('dashboard', { user });
+		res.render('dashboard', {
+			...user,
+			logged_in: req.session.logged_in,
+		});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -116,7 +123,10 @@ router.get('/updatepost/:id', withAuth, async (req, res) => {
 		const post = postData.get({ plain: true });
 
 		// Pass serialised data into handlebars template
-		res.render('updatePost', { post });
+		res.render('updatePost', {
+			...post,
+			logged_in: req.session.logged_in,
+		});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
