@@ -84,3 +84,17 @@ hr {
 #existing-comments .card {
     background-color: rgba(128, 128, 128, 0.105);
 }
+
+#existing-posts h3 {
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+}
+
+#existing-posts .btn-primary {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    background-color: white;
+    color: var(--blue);
+    border: white;
+}
