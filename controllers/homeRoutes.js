@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 			include: [
 				{
 					model: User,
-					attributes: ['username'],
+					attributes: ['id', 'username'],
 				},
 			],
 		});
@@ -41,7 +41,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 			include: [
 				{
 					model: User,
-					attributes: ['username'],
+					attributes: ['id', 'username'],
 				},
 				{
 					model: Comment,
@@ -58,7 +58,10 @@ router.get('/post/:id', withAuth, async (req, res) => {
 		const post = postData.get({ plain: true });
 
 		// Pass serialised data into handlebars template
-		res.render('post', { post, logged_in: true });
+		res.render('post', {
+			...post,
+			current_user_id: req.session.user_id,
+		});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -85,7 +88,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 		const user = userData.get({ plain: true });
 
 		// Pass serialised data into handlebars template
-		res.render('dashboard', { user, logged_in: true });
+		res.render('dashboard', { user });
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);

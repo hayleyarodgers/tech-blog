@@ -6,7 +6,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>{{post.title}}</h2>
                     <!--If user wrote the post, allow them to update or delete it-->
-                    {{#if post.user.id = session.user_id}}
+                    {{#if {{post.user.id}} == current_user_id}}
                     <div>
                         <a href="/updatepost/{{post.id}}"><button id="update-post-button" type="submit" class="btn btn-primary px-4">Update</button></a>
                         <button class="delete-post-button" type="submit" class="btn btn-primary px-4" data-post-id="{{post.id}}">Delete</button>
@@ -15,7 +15,7 @@
                 </div>
                 <p>{{post.content}}</p>
                 <blockquote class="blockquote mb-0">
-                    <footer class="blockquote-footer"><cite title="Source Title">{{user.username}}</cite>, {{post.date_created}}</footer>
+                    <footer class="blockquote-footer"><cite title="Source Title">{{post.user.username}}</cite>, {{post.date_created}}</footer>
                 </blockquote>
             </div>
             <br>
@@ -47,7 +47,7 @@
 </div>
 
 <!--If user wrote the post, allow them to update or delete it-->
-{{#if post.user.id = session.user_id}}
+{{#if {{post.user.id}} == current_user_id}}
     <script src="./js/updatePost.js"></script>
     <script src="./js/deletePost.js"></script>
 {{/if}}
