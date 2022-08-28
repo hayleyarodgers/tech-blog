@@ -99,3 +99,17 @@ header {
     border: white;
     color: var(--blue);
 }
+
+/* Viewport responses */
+  
+/* Small smartphones - reduce size of all text and adjust sizing */
+@media screen and (max-width: 768px) {
+    :root {
+        font-size: 50%;
+    }
+
+    h1,
+    h2 {
+        font-size: 3rem;
+    }
+}
