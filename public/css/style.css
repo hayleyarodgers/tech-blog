@@ -6,7 +6,7 @@
     --blue: #1233FF;
 }
 
-/* Custom font and size styling */
+/* Custom font styling */
 body {
     color: white;
     font-family: var(--font-main);
@@ -16,7 +16,9 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3,
+form label {
     font-family: var(--font-heading);
 }
 
@@ -35,20 +37,10 @@ h2 {
 h3, 
 form label {
     color: var(--blue);
-    font-family: var(--font-heading);
     font-size: 1.65rem;
 }
 
-header {
-    background-color: var(--blue);
-    /*background-image: url('./background.jpeg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;*/
-}
-
-.navbar a {
-    font-size: 2rem; 
+#existing-posts h3 {
     color: white;
 }
 
@@ -58,18 +50,38 @@ p,
     color: rgb(85, 85, 85);
 }
 
-a {
-    text-decoration: none;
-}
-
-.card {
-    background-color: var(--blue);
-}
-
 .form-control {
     font-size: 1.65rem;
 }
 
+hr {
+    margin: 25px 0px;
+}
+
+/* Custom header styling */
+header {
+    background-color: var(--blue);
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar a {
+    font-size: 2rem; 
+    color: white;
+}
+
+/* Custom card colour styling */
+.card {
+    background-color: var(--blue);
+}
+
+#existing-comments .card {
+    background-color: rgba(128, 128, 128, 0.105);
+}
+
+/* Custom button styling */
 .btn-primary {
     font-family: var(--font-heading);
     font-size: 1.65rem;
@@ -77,24 +89,8 @@ a {
     border: var(--blue);
 }
 
-hr {
-    margin: 25px 0px;
-}
-
-#existing-comments .card {
-    background-color: rgba(128, 128, 128, 0.105);
-}
-
-#existing-posts h3 {
-    color: white;
-    font-family: var(--font-heading);
-    font-size: 1.65rem;
-}
-
 #existing-posts .btn-primary {
-    font-family: var(--font-heading);
-    font-size: 1.65rem;
     background-color: white;
-    color: var(--blue);
     border: white;
+    color: var(--blue);
 }
