@@ -30,13 +30,13 @@ router.post('/login', async (req, res) => {
 	try {
 		// Get user based on email
 		const userData = await User.findOne({
-			where: { email: req.body.email },
+			where: { username: req.body.username },
 		});
 
-		// Error if no user with email matching the one in the request
+		// Error if no user with username matching the one in the request
 		if (!userData) {
 			res.status(400).json({
-				message: 'Incorrect email, please try again.',
+				message: 'Incorrect username, please try again.',
 			});
 			return;
 		}
