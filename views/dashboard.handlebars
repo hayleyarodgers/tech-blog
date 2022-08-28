@@ -2,8 +2,11 @@
     <div class="row">
         <div class="col-10 mx-auto">
             <!--List of user's posts-->
-            <h2>Your posts</h2>
-            <p>Any posts you've written will show up here.</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Your posts</h2>
+                <a href="/addpost"><button id="add-post-button" class="btn btn-primary px-4">Add new post</button></a>
+            </div>
+            <p>Any posts you've written will show up below. To add a new post, <a href="/addpost">click here</a>.</p>
             <br>
             <div id="existing-posts">
                 {{#each posts as |post|}}
@@ -18,24 +21,6 @@
                 </div>
                 {{/each}}
             </div>
-            <br>
-            <hr>
-            <form id="new-post">
-                <h2>Add new post</h2>
-                <p>All you need to add is a title and your content.</p>
-                <br>
-                <div class="form-group">
-                    <label for="new-post-title">Title</label>
-                    <input type="text" class="form-control" id="new-post-title" placeholder="What is your post about?">
-                </div>
-                <div class="form-group">
-                    <label for="new-post-content">Content</label>
-                    <textarea rows="3" class="form-control" id="new-post-content" placeholder="Write your post here."></textarea>
-                </div>
-                <button id="new-post-button" type="submit" class="btn btn-primary my-3 px-4">Post</button>
-            </form>
         </div>
     </div>
 </div>
-
-<script src="./js/addPost.js"></script>

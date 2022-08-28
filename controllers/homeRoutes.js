@@ -92,6 +92,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
 	}
 });
 
+// View add post page
+router.get('/addpost', (req, res) => {
+	res.render('addPost');
+});
+
 // View log in page
 router.get('/login', (req, res) => {
 	// If the user is already logged in, redirect them to their dashboard
