@@ -33,7 +33,7 @@ app.use(session(sess));
 const exphbs = require('express-handlebars');
 
 // Import the format date helper function
-const helpers = require('./utils/date');
+const helpers = require('./utils/helpers');
 
 // Pass helper function into Handlebars.js
 const hbs = exphbs.create({ helpers });

@@ -60,6 +60,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 		// Pass serialised data into handlebars template
 		res.render('post', {
 			...post,
+			post_user_id: postData.id,
 			current_user_id: req.session.user_id,
 		});
 	} catch (err) {
