@@ -18,7 +18,8 @@ body {
 h1,
 h2,
 h3,
-form label {
+form label,
+.read-more {
     font-family: var(--font-heading);
 }
 

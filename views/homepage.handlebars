@@ -9,11 +9,12 @@
                     <br>
                     <h2>{{post.title}}</h2>
                     <br>
-                    <p class="col-10 px-0 text-truncate">{{post.content}}</p>
+                    <div class="row">
+                        <p class="col-10 text-truncate">{{post.content}}</p>
+                        <a class="col-2 read-more" href="/post/{{post.id}}"><p>read more →</p></a>
+                    </div>
                     <footer class="blockquote-footer">Written by <cite title="Source Title">{{user.username}}</cite></footer>
                     <br>
-                    <br>
-                    <a href="/post/{{post.id}}"><p>Read more →</p></a>
                 </blockquote>
             </div>
         </div>
