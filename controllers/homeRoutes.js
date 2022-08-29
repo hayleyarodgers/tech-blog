@@ -44,10 +44,16 @@ router.get('/post/:id', withAuth, async (req, res) => {
 			include: [
 				{
 					model: User,
-					attributes: ['id', 'username'],
+					exclude: ['password'],
 				},
 				{
 					model: Comment,
+					include: [
+						{
+							model: User,
+							exclude: ['password'],
+						},
+					],
 				},
 			],
 		});
