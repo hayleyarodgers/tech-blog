@@ -1,12 +1,9 @@
 const deletePost = async (event) => {
-	event.preventDefault();
-
 	const button = event.target;
 	const postId = button.getAttribute('data-post-id');
 
 	const response = await fetch(`api/post/${postId}`, {
 		method: 'DELETE',
-		headers: { 'Content-Type': 'application/json' },
 	});
 
 	if (response.ok) {
