@@ -8,8 +8,8 @@
                     <!--If user wrote the post, allow them to update or delete it-->
                     {{#ifEquals current_user_id post_user_id}}
                     <div>
-                        <a href="/updatepost/{{id}}"><button id="update-post-button" type="submit" class="btn btn-primary px-4">Update</button></a>
-                        <button class="delete-post-button" type="submit" class="btn btn-primary px-4" data-post-id="{{id}}">Delete</button>
+                        <a href="/updatepost/{{id}}"><button id="update-post-button" class="btn btn-primary px-4">Update</button></a>
+                        <button class="delete-post-button btn btn-primary px-4" data-post-id="{{id}}">Delete</button>
                     </div>
                     {{/ifEquals}}
                 </div>
