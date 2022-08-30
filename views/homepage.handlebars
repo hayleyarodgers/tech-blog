@@ -5,13 +5,13 @@
         <div class="card rounded-0 col-10 my-4 px-0">
             <div class="card-body homepage p-5">
                 <blockquote class="blockquote mb-0">
-                    <p>{{format_date post.date_created}}</p>
+                    <p>{{format_date date_created}}</p>
                     <br>
-                    <h2>{{post.title}}</h2>
+                    <h2>{{title}}</h2>
                     <br>
                     <div class="row">
-                        <p class="col-10 text-truncate">{{post.content}}</p>
-                        <a class="col-12 col-lg-2 read-more" href="/post/{{post.id}}"><p>read more →</p></a>
+                        <p class="col-10 text-truncate">{{content}}</p>
+                        <a class="col-12 col-lg-2 read-more" href="/post/{{id}}"><p>read more →</p></a>
                     </div>
                     <footer class="blockquote-footer">Written by <cite title="Source Title">{{user.username}}</cite></footer>
                     <br>
