@@ -70,7 +70,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 		res.render('post', {
 			...post,
 			logged_in: req.session.logged_in,
-			post_user_id: postData.id,
+			post_user_id: postData.user.id,
 			current_user_id: req.session.user_id,
 		});
 	} catch (err) {

@@ -1,4 +1,4 @@
-<div class="container-fluid" data-post-id="{{this.id}}">
+<div class="container-fluid">
     <div class="row">
         <div class="col-10 mx-auto">
             <!--Post-->
@@ -8,7 +8,7 @@
                     <!--If user wrote the post, allow them to update or delete it-->
                     {{#ifEquals current_user_id post_user_id}}
                     <div>
-                        <a href="/updatepost/{{id}}"><button id="update-post-button" class="btn btn-primary px-4">Update</button></a>
+                        <a href="/updatepost/{{id}}"><button class="btn btn-primary px-4" >Update</button></a>
                         <button class="delete-post-button btn btn-primary px-4" data-post-id="{{id}}">Delete</button>
                     </div>
                     {{/ifEquals}}
@@ -48,7 +48,6 @@
 
 <!--If user wrote the post, allow them to update or delete it-->
 {{#ifEquals current_user_id post_user_id}}
-    <script src="/js/updatePost.js"></script>
     <script src="/js/deletePost.js"></script>
 {{/ifEquals}}
 

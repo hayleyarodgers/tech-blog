@@ -1,7 +1,7 @@
 const updatePost = async (event) => {
 	event.preventDefault();
 
-	const postId = document.getAttribute('data-post-id');
+	const postId = event.target.getAttribute('data-post-id');
 	const title = document.querySelector('#update-post-title').value.trim();
 	const content = document.querySelector('#update-post-content').value.trim();
 
