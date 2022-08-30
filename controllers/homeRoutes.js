@@ -111,7 +111,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 // View add post page
 router.get('/addpost', (req, res) => {
-	res.render('addPost');
+	res.render('addPost', {
+		logged_in: req.session.logged_in,
+	});
 });
 
 // View and update blog post
