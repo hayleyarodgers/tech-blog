@@ -5,7 +5,7 @@ const updatePost = async (event) => {
 	const title = document.querySelector('#update-post-title').value.trim();
 	const content = document.querySelector('#update-post-content').value.trim();
 
-	const response = await fetch(`api/updatepost/${postId}`, {
+	const response = await fetch(`api/post/${postId}`, {
 		method: 'PUT',
 		body: JSON.stringify({ title, content }),
 		headers: { 'Content-Type': 'application/json' },
