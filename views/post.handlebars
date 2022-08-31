@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid post" data-post-id="{{this.id}}">
     <div class="row">
         <div class="col-10 mx-auto">
             <!--Post-->
@@ -37,7 +37,7 @@
                     {{/each}}
                 </div>
                 <br>
-                <div id="new-comment">
+                <div>
                     <textarea rows="1" class="form-control" id="new-comment" placeholder="Add a comment"></textarea>
                     <button type="submit" class="btn btn-primary my-3 px-4" id="comment-button">Post</button>
                 </div>

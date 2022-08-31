@@ -1,8 +1,9 @@
 const addComment = async (event) => {
 	event.preventDefault();
 
-	const postId = pet.getAttribute('data-post-id');
-	const comment = document.querySelector('#new-comment').value.trim();
+	const post = document.querySelector('.post');
+	const postId = post.getAttribute('data-post-id');
+	const comment = document.querySelector('#new-comment').value;
 
 	const response = await fetch('/api/comment', {
 		method: 'POST',
