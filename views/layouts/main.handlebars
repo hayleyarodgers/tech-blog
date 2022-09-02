@@ -21,13 +21,13 @@
             <nav class="navbar">
                 <a href="/" class="navbar-brand"><h1>Tech blog</h1></a>
                 <span class="navbar-text form-inline">
-                    <a href="/" class="px-5">Home</a>
+                    <a href="/" class="px-5 un">Home</a>
                     <!-- Conditionally render login or logout links -->
                     {{#if logged_in}}
-                        <a href="/dashboard" class="px-5">Dashboard</a>
-                        <button class="px-5" id="logout-button">Log out</button>
+                        <a href="/dashboard" class="px-5 un">Dashboard</a>
+                        <a href="" class="px-5 un" id="logout-button">Log out</a>
                     {{else}}
-                        <a href="/login" class="px-5">Log in</a>
+                        <a href="/login" class="px-5 un">Log in</a>
                     {{/if}}
                 </span>
             </nav>

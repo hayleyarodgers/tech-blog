@@ -60,7 +60,8 @@ p,
     font-size: 1.65rem;
 }
 
-a {
+a,
+a:hover {
     text-decoration: none;
     color: var(--blue);
 }
@@ -68,13 +69,6 @@ a {
 .navbar a {
     font-size: 2rem; 
     color: white;
-}
-
-#logout-button {
-    font-size: 2rem; 
-    color: white;
-    border: none;
-    background: none;
 }
 
 hr {
