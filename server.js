@@ -1,8 +1,16 @@
+/* JS DIRECTORY
+    1. =SESSIONS-AND-AUTHENTICATION
+    2. =TEMPLATE-ENGINE
+    3. =MIDDLEWARE
+    4. =ROUTING
+    5. =CONNECTION-TO-DATABASE
+*/
+
 // Import and use Express.js module for working with Node
 const express = require('express');
 const app = express();
 
-/* ----- */
+/* ===SESSIONS-AND-AUTHENTICATION=== */
 
 // Import the database connection object
 const sequelize = require('./config/connection');
@@ -19,7 +27,6 @@ const sess = {
 	cookie: {},
 	resave: false,
 	saveUninitialized: true,
-	// Sets up session store
 	store: new SequelizeStore({
 		db: sequelize,
 	}),
@@ -27,22 +34,27 @@ const sess = {
 
 app.use(session(sess));
 
-/* ----- */
+/* ===TEMPLATE-ENGINE=== */
 
 // Import the Handlebars.js package for dynamically creating HTML
 const exphbs = require('express-handlebars');
 
-// Import the format date helper function
-const helpers = require('./utils/helpers');
+// Import the helper functions
+const { ifEquals } = require('./utils/ifEquals');
+const { format_date } = require('./utils/formatDate');
 
-// Pass helper function into Handlebars.js
-const hbs = exphbs.create({ helpers });
+// Pass helper functions into Handlebars.js and inform Express.js which template engine to use
+app.engine(
+	'handlebars',
+	exphbs({
+		defaultLayout: 'main',
+		helpers: { ifEquals: ifEquals, format_date: format_date },
+	})
+);
 
-// Inform Express.js which template engine to use
-app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-/* ----- */
+/* ===MIDDLEWARE=== */
 
 // Middleware for converting a application/json data into a javascript object
 app.use(express.json());
@@ -56,11 +68,13 @@ const path = require('path');
 // Middleware for automatically serving static assets when root URL is accessed
 app.use(express.static(path.join(__dirname, 'public')));
 
-/* ----- */
+/* ===ROUTING=== */
 
 // Import and use modular routers
 const routes = require('./controllers');
 app.use(routes);
+
+/* ===CONNECTION-TO-DATABASE=== */
 
 // Create port
 const PORT = process.env.PORT || 3001;
