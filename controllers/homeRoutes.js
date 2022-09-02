@@ -140,6 +140,31 @@ router.get('/updatepost/:id', withAuth, async (req, res) => {
 	}
 });
 
+// View and update comment
+router.get('/updatecomment/:id', withAuth, async (req, res) => {
+	try {
+		// Get blog post based on id
+		const commentData = await Comment.findByPk(req.params.id);
+
+		if (!commentData) {
+			res.status(404).json({ message: 'No comment found with that id.' });
+			return;
+		}
+
+		// Serialise commentData into a plain object so handlebars template can read it
+		const comment = commentData.get({ plain: true });
+
+		// Pass serialised data into handlebars template
+		res.render('updateComment', {
+			...comment,
+			logged_in: req.session.logged_in,
+		});
+	} catch (err) {
+		console.log(err);
+		res.status(500).json(err);
+	}
+});
+
 // View log in page
 router.get('/login', (req, res) => {
 	// If the user is already logged in, redirect them to their dashboard
