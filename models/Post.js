@@ -1,4 +1,4 @@
-// This file creates a Post table in our blog database to store information about posts made on the site
+/* This file creates a Post table in our blog database to store information about posts made on the site */
 
 // Destructure Model and DataTypes from Sequelize database to make them available for use in our table creation
 const { Model, DataTypes } = require('sequelize');

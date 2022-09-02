@@ -1,4 +1,4 @@
-// This file specifies the relationships between the User, Post and Comment tables
+/* This file specifies the relationships between the User, Post and Comment tables */
 
 // Import tables
 const User = require('./User');

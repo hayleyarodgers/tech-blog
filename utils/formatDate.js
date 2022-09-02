@@ -1,4 +1,4 @@
-// This file contains a helper function for changing the format of a date in the database
+/* This file contains a helper function for changing the format of a date in the database */
 
 module.exports = {
 	format_date: (date) => {

@@ -1,4 +1,4 @@
-// This file specifies the paths for all api routes
+/* This file specifies the paths for all api routes */
 
 // Import express and create a new router module
 const router = require('express').Router();

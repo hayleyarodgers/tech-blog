@@ -1,4 +1,4 @@
-// This file contains a helper function for authentication
+/* This file contains a helper function for authentication */
 
 // In routes that require the user to be logged in, withAuth is the first callback function
 // If they're not logged in, the user is redirected to log in page
