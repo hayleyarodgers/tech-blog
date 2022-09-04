@@ -40,17 +40,15 @@ To create this application, I used used:
 
 ### Screenshots of Application
 
-![Screenshot of application]()
+![Screenshot of application](./assets/images/screenshot-of-application-home.png)
 
-![Screenshot of application]()
+![Screenshot of application](./assets/images/screenshot-of-application-login.png)
 
-![Screenshot of application]()
+![Screenshot of application](./assets/images/screenshot-of-application-dashboard.png)
 
-![Screenshot of application]()
+![Screenshot of application](./assets/images/screenshot-of-application-add-post.png)
 
-![Screenshot of application]()
-
-![Screenshot of application]()
+![Screenshot of application](./assets/images/screenshot-of-application-post.png)
 
 ## Access
 
@@ -60,7 +58,7 @@ The repository where the code is saved is on Github. To access it, click [here](
 
 ### Live Application
 
-Our application is deployed on Heroku. To access it, click [here](https://hayleyarodgers-techblog.herokuapp.com/).
+My application is deployed on Heroku. To access it, click [here](https://hayleyarodgers-tech-blog.herokuapp.com/).
 
 ## Installation
 
@@ -81,7 +79,7 @@ To use the application from the command line:
 6. (Optional) Seed the database with sample data by entering ```npm run seed``` in the command line.
 7. Start the server by entering ```npm start``` in the command line.
 
-Alternatively, to use the live application, click [here](https://hayleyarodgers-techblog.herokuapp.com/).
+Alternatively, to use the live application, click [here](https://hayleyarodgers-tech-blog.herokuapp.com/).
 
 ## Credits
 
@@ -91,4 +89,3 @@ Alternatively, to use the live application, click [here](https://hayleyarodgers-
 - I used the [dotenv](https://www.npmjs.com/package/dotenv) package to use environment variables to store sensitive data needed to run the application.
 - I used the [bcrypt](https://www.npmjs.com/package/bcrypt) package to hash passwords.
 - I used the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/sequelize) packages to add authentication.
-- I used the [nodemailer](https://www.npmjs.com/package/nodemailer) package to send email notifications.
